@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col-6">
+      <div class="card text-center">
+        <div class="card-header">
+          <h5 class="card-title">Formulario de registro</h5>
+        </div>
+        <div class="card-body">
+          <form class="row g-3" [formGroup]="dataRegister" (ngSubmit)="RegisterPerson()">
+            <div class="col-md-6">
+              <label for="inputName" class="form-label">Nombres</label>
+              <input type="text" class="form-control"  formControlName="names"
+                [ngClass]="{ notValid : dataRegister.get('names')?.invalid &&dataRegister.get('names')?.touched}">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Apellidos</label>
+              <input type="text" class="form-control"  formControlName="lastName"
+                [ngClass]="{ notValid : dataRegister.get('lastName')?.invalid &&dataRegister.get('lastName')?.touched}">
+            </div>
+            <div class="col-4">
+              <label for="inputTypeIdentification" class="form-label">Tipo Identificacion</label>
+              <select class="form-control mb-2"
+                [ngClass]="{ notValid : dataRegister.get('typeIdentification')?.invalid &&dataRegister.get('typeIdentification')?.touched}"
+                formControlName="typeIdentification">
+                <option value="">Seleccione</option>
+                <option value="CC"> Cedula de ciudadanía</option>
+                <option value="TI">Tarjeta de identidad</option>
+                <option value="TE">Tarjeta de extranjeria</option>
+                <option value="PAS">Pasaporte</option>
+              </select>
+            </div>
+            <div class="col-8">
+              <label for="inputAddress2" class="form-label">Numero identificacion</label>
+              <input type="text" class="form-control"  formControlName="identificationNumber"
+                [ngClass]="{ notValid : dataRegister.get('identificationNumber')?.invalid &&dataRegister.get('identificationNumber')?.touched}">
+            </div>
+            <div class="col-md-12">
+              <label for="inputCity" class="form-label">Email</label>
+              <input type="email" class="form-control"  formControlName="email"
+                [ngClass]="{ notValid : dataRegister.get('email')?.invalid &&dataRegister.get('email')?.touched}">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Usuario</label>
+              <input type="text" class="form-control" formControlName="userName"
+                [ngClass]="{ notValid : dataRegister.get('userName')?.invalid &&dataRegister.get('userName')?.touched}">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" formControlName="password"
+                [ngClass]="{ notValid : dataRegister.get('password')?.invalid &&dataRegister.get('password')?.touched}">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-danger">Registrarse</button>
+              <button type="button" class="btn btn-secondary register" [routerLink]="'/auth/login'">Regresar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+</div>

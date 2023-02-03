@@ -1,0 +1,24 @@
+<div class="container">
+    <form class="row g-3">
+        <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Buscar usuario" [(ngModel)]="textSearch"
+                name="textSearch">
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary mb-3" (click)="GetPersonsAndSearch()">Buscar</button>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm" *ngFor="let item of dataModel" (click)="ActiveFollowers(item.followers_url)">
+            <div class="card" style="width: 18rem;">
+                <img [src]="item.avatar_url" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.login}}</h5>
+                    <p class="card-text">Puntaje {{item.score | number: '1.1-5'}}</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

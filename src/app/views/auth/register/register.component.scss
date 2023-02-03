@@ -1,0 +1,21 @@
+:host {
+    .container {
+        top: 5em;
+        position: relative;
+
+        .login {
+            margin-right: 1em;
+        }
+        .register {
+            margin-left: 1em;
+        }
+        .card-body{
+            form {
+                .notValid {
+                    border: 1px solid #bd020a;                    
+                    background: #ffd1d1ad;
+                  }
+            }
+        }
+    }
+}

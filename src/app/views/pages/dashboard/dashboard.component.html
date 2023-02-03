@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombres</th>
+            <th scope="col">Cocumento</th>
+            <th scope="col">Correo</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataPerson">
+            <th >{{item.fullName}}</th>
+            <td>{{item.fullIdentification}}</td>
+            <td>{{item.email}}</td>                    
+        </tr>
+    </tbody>
+</table>

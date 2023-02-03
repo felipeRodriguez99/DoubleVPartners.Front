@@ -1,0 +1,16 @@
+:host{
+    .container {
+        margin: 1em;
+        form {
+            margin-top: 2em;
+        }
+        .row {
+            width: 80%;
+            .card {
+                margin-top: 2em;  
+                cursor: pointer;      
+            }
+    
+        }
+    }
+}
